@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>demo</artifactId>
+    <parent>
+        <artifactId>demo-parent</artifactId>
+        <groupId>x.trident</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <dependencies>
+        <!-- 微服务模块 -->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>micro-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- redis缓存 -->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-redis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--数据源连接和dao框架-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-db-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--资源扫描-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-scanner-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--参数校验模块-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-validator-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--日志模块-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-sequence-starter</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <finalName>${jar.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 如果没有该项配置，则devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>springboot-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>demo-parent</artifactId>
+    <version>1.0.0</version>
+    <name>demo-parent</name>
+    <description>trident的demo应用，修改为您想要的名字</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>demo</module>
+        <module>demo-feign</module>
+        <module>demo-common</module>
+    </modules>
+
+    <properties>
+        <docker.img.version>latest</docker.img.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 微服务模块 -->
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>micro-spring-boot-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+            <!-- redis缓存 -->
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>trident-redis-spring-boot-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+            <!--数据源连接和dao框架-->
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>trident-db-spring-boot-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+            <!--资源扫描-->
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>trident-scanner-spring-boot-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+            <!--参数校验模块-->
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>trident-validator-spring-boot-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+            <!--日志模块-->
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>trident-log-spring-boot-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>x.trident</groupId>
+                <artifactId>trident-sequence-starter</artifactId>
+                <version>${trident.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
