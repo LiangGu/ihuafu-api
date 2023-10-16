@@ -9,14 +9,14 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>demo-parent</artifactId>
+    <artifactId>ihuafu-api</artifactId>
     <version>1.0.0</version>
     <name>demo-parent</name>
     <description>trident的demo应用，修改为您想要的名字</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>demo</module>
+        <module>design-app</module>
         <module>demo-feign</module>
         <module>demo-common</module>
     </modules>

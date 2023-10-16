@@ -1,4 +1,4 @@
-package x.trident.modular.demo;
+package x.trident.modular.dwb;
 
 import org.springframework.web.bind.annotation.RestController;
 import x.trident.core.pojo.response.ResponseData;
