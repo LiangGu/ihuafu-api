@@ -6,11 +6,9 @@ import x.trident.modular.dwb.model.params.SDTxt2ImgParam;
 import x.trident.modular.dwb.model.results.SDTxt2ImgResult;
 
 /**
- * <p>
- * 文生图记录表，包括param，页面录入的信息，document，result及记录本身的一些信息 服务类
- * </p>
+ * DesignRecord 文生图记录表，包括param，页面录入的信息，document，result及记录本身的一些信息 服务类
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 public interface DwDesignRecordService extends IService<DwDesignRecord> {

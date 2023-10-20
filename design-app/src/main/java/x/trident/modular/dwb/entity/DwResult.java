@@ -13,42 +13,40 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
- * <p>
- * 
- * </p>
+ * DwResult对象
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Getter
 @Setter
-  @Accessors(chain = true)
-  @TableName("dw_result")
+@Accessors(chain = true)
+@TableName("dw_result")
 @ApiModel(value = "DwResult对象", description = "")
 public class DwResult implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      @TableId(value = "id", type = IdType.AUTO)
-      private Integer id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     @TableField("dw_design_record_id")
     private Integer dwDesignRecordId;
 
-      @ApiModelProperty("输入的请求体")
-      @TableField("parameters")
+    @ApiModelProperty("输入的请求体")
+    @TableField("parameters")
     private String parameters;
 
-      @ApiModelProperty("返回的图片的信息")
-      @TableField("info")
+    @ApiModelProperty("返回的图片的信息")
+    @TableField("info")
     private String info;
 
-      @ApiModelProperty("插入用户的ID")
-      @TableField("insert_user")
+    @ApiModelProperty("插入用户的ID")
+    @TableField("insert_user")
     private Integer insertUser;
 
-      @ApiModelProperty("插入时间")
-      @TableField("insert_time")
+    @ApiModelProperty("插入时间")
+    @TableField("insert_time")
     private LocalDate insertTime;
 
 

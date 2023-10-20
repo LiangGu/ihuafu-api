@@ -5,11 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 import x.trident.modular.dwb.entity.DwImages;
 
 /**
- * <p>
- *  Mapper 接口
- * </p>
+ *  图像Mapper 接口
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Mapper

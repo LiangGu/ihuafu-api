@@ -5,11 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 import x.trident.modular.dwb.entity.DwDocument;
 
 /**
- * <p>
  * 用户设计时上传的附件表 Mapper 接口
- * </p>
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Mapper

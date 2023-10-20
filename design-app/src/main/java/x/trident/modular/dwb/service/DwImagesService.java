@@ -4,11 +4,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import x.trident.modular.dwb.entity.DwImages;
 
 /**
- * <p>
- *  服务类
- * </p>
+ * Images 服务类
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 public interface DwImagesService extends IService<DwImages> {

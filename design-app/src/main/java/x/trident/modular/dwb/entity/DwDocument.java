@@ -13,24 +13,22 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
- * <p>
  * 用户设计时上传的附件表
- * </p>
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Getter
 @Setter
-  @Accessors(chain = true)
-  @TableName("dw_document")
+@Accessors(chain = true)
+@TableName("dw_document")
 @ApiModel(value = "DwDocument对象", description = "用户设计时上传的附件表")
 public class DwDocument implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      @TableId(value = "id", type = IdType.AUTO)
-      private Integer id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     @TableField("dw_design_record_id")
     private Integer dwDesignRecordId;
@@ -41,20 +39,20 @@ public class DwDocument implements Serializable {
     @TableField("document_type")
     private String documentType;
 
-      @ApiModelProperty("Multipurpose Internet Mail Extensions,例：image/jpeg: 用于JPEG图片。")
-      @TableField("document_mime_type")
+    @ApiModelProperty("Multipurpose Internet Mail Extensions,例：image/jpeg: 用于JPEG图片。")
+    @TableField("document_mime_type")
     private String documentMimeType;
 
-      @ApiModelProperty("文件名称")
-      @TableField("document_filename")
+    @ApiModelProperty("文件名称")
+    @TableField("document_filename")
     private String documentFilename;
 
-      @ApiModelProperty("插入用户的ID")
-      @TableField("insert_user")
+    @ApiModelProperty("插入用户的ID")
+    @TableField("insert_user")
     private Integer insertUser;
 
-      @ApiModelProperty("插入时间")
-      @TableField("insert_time")
+    @ApiModelProperty("插入时间")
+    @TableField("insert_time")
     private LocalDate insertTime;
 
 

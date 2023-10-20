@@ -7,11 +7,9 @@ import x.trident.modular.dwb.service.DwControlnetParamService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- *  服务实现类
- * </p>
+ * ControlnetParam 服务实现类
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Service

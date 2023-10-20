@@ -17,11 +17,9 @@ import java.util.Base64;
 import java.util.concurrent.Exchanger;
 
 /**
- * <p>
- * 文生图记录表，包括param，页面录入的信息，document，result及记录本身的一些信息 服务实现类
- * </p>
+ * DesignRecord 文生图记录表，包括param，页面录入的信息，document，result及记录本身的一些信息 服务实现类
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Service

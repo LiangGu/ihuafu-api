@@ -5,11 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 import x.trident.modular.dwb.entity.DwDesignRecord;
 
 /**
- * <p>
  * 文生图记录表，包括param，页面录入的信息，document，result及记录本身的一些信息 Mapper 接口
- * </p>
  *
- * @author guyuL
+ * @author Bryan.liang
  * @since 2023-10-20 09:05:12
  */
 @Mapper
