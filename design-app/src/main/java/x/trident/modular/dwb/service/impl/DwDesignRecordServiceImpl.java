@@ -4,38 +4,39 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import x.trident.modular.dwb.entity.DesignRecord;
-import x.trident.modular.dwb.mapper.DesignRecordMapper;
+import x.trident.modular.dwb.entity.DwDesignRecord;
+import x.trident.modular.dwb.mapper.DwDesignRecordMapper;
 import x.trident.modular.dwb.model.params.SDTxt2ImgParam;
 import x.trident.modular.dwb.model.results.SDTxt2ImgResult;
-import x.trident.modular.dwb.service.DesignWBService;
+import x.trident.modular.dwb.service.DwDesignRecordService;
+import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.concurrent.Exchanger;
 
 /**
- * 设计工作台服务实现类
+ * <p>
+ * 文生图记录表，包括param，页面录入的信息，document，result及记录本身的一些信息 服务实现类
+ * </p>
  *
- * @author Bryan.liang
- * @since 2023-10-08
+ * @author guyuL
+ * @since 2023-10-20 09:05:12
  */
-@Service("DesignWBServiceImpl")
-public class DesignWBServiceImpl extends ServiceImpl<DesignRecordMapper, DesignRecord> implements DesignWBService {
+@Service
+public class DwDesignRecordServiceImpl extends ServiceImpl<DwDesignRecordMapper, DwDesignRecord> implements DwDesignRecordService {
 
     // 从配置中读取相关的参数
-    @Value("${StableDiffusion.address}")
+    @Value("${stable-diffusion.address}")
     private String address;
 
-    @Value("${StableDiffusion.account}")
+    @Value("${stable-diffusion.account}")
     private String account;
 
-    @Value("${StableDiffusion.password}")
+    @Value("${stable-diffusion.password}")
     private String password;
 
-    @Autowired
-    private RestTemplate restTemplate;
 
     // SD 文生图接口路径
     private static final String TXT2IMG_ENDPOINT = "/sdapi/v1/txt2img";
@@ -53,6 +54,7 @@ public class DesignWBServiceImpl extends ServiceImpl<DesignRecordMapper, DesignR
      */
     private SDTxt2ImgResult sendTxt2ImgRequest(SDTxt2ImgParam param) {
         HttpEntity<SDTxt2ImgParam> requestEntity = buildRequestEntity(param);
+        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<SDTxt2ImgResult> response = restTemplate.exchange(address + TXT2IMG_ENDPOINT, HttpMethod.POST, requestEntity, SDTxt2ImgResult.class);
         return response.getBody();
     }

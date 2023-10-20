@@ -9,12 +9,10 @@ import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.querys.MySqlQuery;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.baomidou.mybatisplus.generator.fill.Column;
 import com.baomidou.mybatisplus.generator.keywords.MySqlKeyWordsHandler;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-
 import java.util.function.Consumer;
 
 import static org.junit.Assert.assertTrue;
@@ -28,11 +26,11 @@ import static org.junit.Assert.assertTrue;
 public class MybatisPlusGeneratorTest {
 
     private static final String PACKAGE_NAME = "x.trident.modular";
-    private static final String OUTPUT_DIR = "./src/main/java/";
+    private static final String OUTPUT_DIR = "src\\main\\java\\";
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/trident?useUnicode=true&useSSL=false&characterEncoding=utf8";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "123456";
+    private static final String JDBC_URL = "jdbc:mysql://121.5.76.153:3306/Ihf_dev?useUnicode=true&useSSL=false&characterEncoding=utf8";
+    private static final String DB_USER = "dba";
+    private static final String DB_PASSWORD = "Ihf545586@";
 
     /**
      * 生成mybatis-plus代码段
@@ -40,6 +38,7 @@ public class MybatisPlusGeneratorTest {
     @Test
     public void mybatisPlusGeneratorTest() {
         assertTrue(StringUtils.contains(JDBC_URL, "jdbc:"));
+
         FastAutoGenerator.create(new DataSourceConfig.Builder(JDBC_URL, DB_USER, DB_PASSWORD)
                 .dbQuery(new MySqlQuery())
                 .typeConvert(new MySqlTypeConvert())

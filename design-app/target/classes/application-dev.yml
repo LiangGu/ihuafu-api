@@ -16,3 +16,9 @@ spring:
   redis:
     host: 121.5.76.153
     port: 6379
+
+# Stable Diffusion
+stable-diffusion:
+  address: "127.0.0.1"
+  account: "IHUAFU"
+  password: "Gongxifacai@2023"

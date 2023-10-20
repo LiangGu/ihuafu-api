@@ -52,7 +52,17 @@
             <groupId>x.trident</groupId>
             <artifactId>trident-sequence-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
 
     </dependencies>
 
